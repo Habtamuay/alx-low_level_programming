@@ -1,26 +1,16 @@
 #include "main.h"
 /**
- * _strcat - concatenates 2 strings.
- * @dest: string with concatenation
- * @src: string to be concatenated
- * Return: Always 0.
- */
-char *_strcat(char *dest, char *src)
+* _puts_recursion - prints a string followed by a new line
+*@s:character to be printed
+*Return:returns void
+*/
+void _puts_recursion(char *s)
 {
-	int lengthD, lengthS;
-
-	lengthD = 0;
-	lengthS = 0;
-
-	while (*(dest + lengthD) != '\0')
-		lengthD++;
-
-	while (*(src + lengthS) != '\0' && lengthD < 97)
+	if (*s == '\0')
+		_putchar('\n');
+	else
 	{
-		*(dest + lengthD) = *(src + lengthS);
-		lengthD++;
-		lengthS++;
+		_putchar(s[0]);
+		_puts_recursion(s + 1);
 	}
-	*(dest + lengthD) = '\0';
-	return (dest);
 }
